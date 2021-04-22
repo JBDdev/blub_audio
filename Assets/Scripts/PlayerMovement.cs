@@ -48,6 +48,7 @@ public class PlayerMovement : MonoBehaviour
     #region Private Fields
     bool canDash = true;
     bool rotationCanceled = false;
+    bool playingSound = true;
     float baseDiameter;
     float baseGravityScale;
     #endregion
@@ -57,12 +58,10 @@ public class PlayerMovement : MonoBehaviour
     CircleCollider2D circleHitbox;
     PolygonCollider2D ovalHitbox;
     Animator eyesAnimator;
+    FMODUnity.StudioEventEmitter emitter;
     #endregion
 
 
-    //FMOD Testing
-    FMOD.Studio.EventInstance startStretch;
-    FMOD.Studio.EventInstance startShrink;
 
 
     void Start()
@@ -74,8 +73,7 @@ public class PlayerMovement : MonoBehaviour
         baseDiameter = transform.localScale.x;
         baseGravityScale = rb.gravityScale;
 
-        startStretch = FMODUnity.RuntimeManager.CreateInstance("event:/player_stretch");
-        startShrink = FMODUnity.RuntimeManager.CreateInstance("event:/player_shrink");
+        emitter = transform.GetComponent<FMODUnity.StudioEventEmitter>();
     }
 
     void Update()
@@ -222,8 +220,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            holdingShift = true;
-            startShrink.start();
+            holdingShift = true;          
         }
         else
         {
@@ -297,16 +294,25 @@ public class PlayerMovement : MonoBehaviour
         if (holdingSpace)
         {
             transform.localScale = new Vector2(transform.localScale.x + (stretchSpeed * Time.deltaTime), baseDiameter);
-            startStretch.start();
-        }
-        else { startStretch.stop((FMOD.Studio.STOP_MODE.IMMEDIATE)); }
 
-        if (holdingShift)
+            if(!emitter.IsPlaying())
+                emitter.Play();
+
+        }
+
+        else if (holdingShift)
         {
             transform.localScale = new Vector2(transform.localScale.x + (-stretchSpeed * Time.deltaTime), baseDiameter);
-            startStretch.start();
+
+            if(!emitter.IsPlaying())
+                emitter.Play();
+
         }
-        else { startShrink.stop(FMOD.Studio.STOP_MODE.IMMEDIATE); }
+        else
+        {
+            emitter.Stop();
+        }
+
         #endregion
 
         #region Stretch Constraints

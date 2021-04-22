@@ -456,8 +456,8 @@ MonoBehaviour:
   SwitchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: ../audio/blub_fmod/blub_fmod.fspro
-  sourceBankPath: ..\audio\blub_fmod\Build
+  sourceProjectPath: audio/blub_fmod/blub_fmod.fspro
+  sourceBankPath: audio\blub_fmod\Build
   SourceBankPathUnformatted: 
   AutomaticEventLoading: 1
   BankLoadType: 0
