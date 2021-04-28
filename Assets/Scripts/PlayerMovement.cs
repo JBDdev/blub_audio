@@ -44,7 +44,6 @@ public class PlayerMovement : MonoBehaviour
     [Space]
     public bool usedJump = false;
     public bool canDash = true;
-    public bool hardFall = false;
     #endregion
 
     #region Private Fields
@@ -53,6 +52,7 @@ public class PlayerMovement : MonoBehaviour
     float baseDiameter;
     float baseGravityScale;
     Vector3 preUpdateVelocity;
+    FMOD.Studio.EventInstance playerState;
     #endregion
 
     #region Component References
@@ -100,9 +100,14 @@ public class PlayerMovement : MonoBehaviour
             rotationCanceled = false;
             rb.gravityScale = baseGravityScale;
             Invoke("resetBounce", 0.1f);
-            if (preUpdateVelocity.y < -8.0f)
+            if (preUpdateVelocity.y < -4.0f)
             {
-                transform.parent.GetComponentInChildren<PlayerAudio>().emitters[2].Play();
+                PlayerAudio pAudio = transform.parent.GetComponentInChildren<PlayerAudio>();
+                pAudio.emitters[2].SetParameter("Falling Speed", -preUpdateVelocity.y / 20.0f);
+                float burgy;
+                pAudio.emitters[2].EventInstance.getParameterByName("Falling Speed", out burgy);
+                Debug.Log(burgy);
+                pAudio.emitters[2].Play();
             }
      
         }

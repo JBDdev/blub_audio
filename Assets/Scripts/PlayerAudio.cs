@@ -8,6 +8,7 @@ public class PlayerAudio : MonoBehaviour
     PlayerMovement pMove;
     [SerializeField] GameObject player;
     [SerializeField] float rotModulo;
+    [SerializeField] float maxFallSpeed = 500.0f;
     bool playedHonk = true;
     // Start is called before the first frame update
     void Start()
@@ -32,11 +33,6 @@ public class PlayerAudio : MonoBehaviour
             emitters[1].Play();
         }
 
-        if (pMove.hardFall)
-        {
-            emitters[2].Play();
-        }
-
         if (Input.GetKeyDown(KeyCode.Space))
         {
             emitters[3].Play();
@@ -56,7 +52,7 @@ public class PlayerAudio : MonoBehaviour
         }
 
         rotModulo = Mathf.Abs(player.transform.rotation.z) % 90;
-        Debug.Log(rotModulo);
+        //Debug.Log(rotModulo);
         if (rotModulo <= 0.25f || rotModulo > 0.95f)
         {          
             if (!playedHonk)

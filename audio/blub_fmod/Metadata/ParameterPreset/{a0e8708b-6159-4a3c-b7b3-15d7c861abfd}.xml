@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="ParameterPreset" id="{a0e8708b-6159-4a3c-b7b3-15d7c861abfd}">
+		<property name="name">
+			<value>Falling Speed</value>
+		</property>
+		<relationship name="folder">
+			<destination>{72e86a6c-0268-426b-8d97-2d23d374e3a2}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{9191ef47-9abd-4c76-8b6c-4f601d6d9c2f}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{9191ef47-9abd-4c76-8b6c-4f601d6d9c2f}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>
