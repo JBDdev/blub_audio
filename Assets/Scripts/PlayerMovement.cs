@@ -42,15 +42,17 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] bool holdingShift = false;
     [SerializeField] bool holdingDown = false;
     [Space]
-    [SerializeField] bool usedJump = false;
+    public bool usedJump = false;
+    public bool canDash = true;
+    public bool hardFall = false;
     #endregion
 
     #region Private Fields
-    bool canDash = true;
+
     bool rotationCanceled = false;
-    bool playingSound = true;
     float baseDiameter;
     float baseGravityScale;
+    Vector3 preUpdateVelocity;
     #endregion
 
     #region Component References
@@ -58,7 +60,6 @@ public class PlayerMovement : MonoBehaviour
     CircleCollider2D circleHitbox;
     PolygonCollider2D ovalHitbox;
     Animator eyesAnimator;
-    FMODUnity.StudioEventEmitter emitter;
     #endregion
 
 
@@ -72,8 +73,7 @@ public class PlayerMovement : MonoBehaviour
         ovalHitbox = transform.GetComponent<PolygonCollider2D>();
         baseDiameter = transform.localScale.x;
         baseGravityScale = rb.gravityScale;
-
-        emitter = transform.GetComponent<FMODUnity.StudioEventEmitter>();
+        preUpdateVelocity = new Vector3();
     }
 
     void Update()
@@ -87,6 +87,7 @@ public class PlayerMovement : MonoBehaviour
         handleStretch();
 
         eyesAnimator.SetFloat("Y Velocity", rb.velocity.y);
+        preUpdateVelocity = rb.velocity;
     }
 
     void OnCollisionEnter2D(Collision2D col)
@@ -97,7 +98,14 @@ public class PlayerMovement : MonoBehaviour
             rotationCanceled = false;
             rb.gravityScale = baseGravityScale;
             Invoke("resetBounce", 0.1f);
+            if (preUpdateVelocity.y < -8.0f)
+            {
+                transform.parent.GetComponentInChildren<PlayerAudio>().emitters[2].Play();
+            }
+     
         }
+
+
         
     }
 
@@ -294,23 +302,11 @@ public class PlayerMovement : MonoBehaviour
         if (holdingSpace)
         {
             transform.localScale = new Vector2(transform.localScale.x + (stretchSpeed * Time.deltaTime), baseDiameter);
-
-            if(!emitter.IsPlaying())
-                emitter.Play();
-
         }
 
         else if (holdingShift)
         {
             transform.localScale = new Vector2(transform.localScale.x + (-stretchSpeed * Time.deltaTime), baseDiameter);
-
-            if(!emitter.IsPlaying())
-                emitter.Play();
-
-        }
-        else
-        {
-            emitter.Stop();
         }
 
         #endregion
