@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] PhysicsMaterial2D floorPhysicsMaterial;
 
     [Header("Player Constraints")]
-    [SerializeField] float maxStretch = 5f;
+    public float maxStretch = 5f;
     [SerializeField] float maxVelocity = 10f;
 
     [Space]
@@ -44,12 +44,13 @@ public class PlayerMovement : MonoBehaviour
     [Space]
     public bool usedJump = false;
     public bool canDash = true;
+    public float baseDiameter;
     #endregion
 
     #region Private Fields
 
     bool rotationCanceled = false;
-    float baseDiameter;
+    
     float baseGravityScale;
     Vector3 preUpdateVelocity;
     FMOD.Studio.EventInstance playerState;
@@ -104,9 +105,6 @@ public class PlayerMovement : MonoBehaviour
             {
                 PlayerAudio pAudio = transform.parent.GetComponentInChildren<PlayerAudio>();
                 pAudio.emitters[2].SetParameter("Falling Speed", -preUpdateVelocity.y / 20.0f);
-                float burgy;
-                pAudio.emitters[2].EventInstance.getParameterByName("Falling Speed", out burgy);
-                Debug.Log(burgy);
                 pAudio.emitters[2].Play();
             }
      

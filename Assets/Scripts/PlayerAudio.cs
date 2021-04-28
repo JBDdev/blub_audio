@@ -33,6 +33,16 @@ public class PlayerAudio : MonoBehaviour
             emitters[1].Play();
         }
 
+        if (Input.GetKey(KeyCode.Space))
+        {
+            emitters[3].SetParameter("Player Size", (player.transform.localScale.x - pMove.baseDiameter) / (pMove.maxStretch - pMove.baseDiameter));
+        }
+
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            emitters[4].SetParameter("Player Size", (player.transform.localScale.x - pMove.baseDiameter) / (pMove.maxStretch - pMove.baseDiameter));
+        }
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
             emitters[3].Play();
