@@ -88,6 +88,8 @@ public class PlayerMovement : MonoBehaviour
 
         eyesAnimator.SetFloat("Y Velocity", rb.velocity.y);
         preUpdateVelocity = rb.velocity;
+
+        
     }
 
     void OnCollisionEnter2D(Collision2D col)

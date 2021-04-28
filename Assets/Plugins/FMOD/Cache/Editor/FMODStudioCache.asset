@@ -62,7 +62,7 @@ MonoBehaviour:
   - {fileID: 274869691507446027}
   IsStream: 0
   Is3D: 0
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
@@ -215,7 +215,7 @@ MonoBehaviour:
   - {fileID: 274869691507446027}
   StringsBanks:
   - {fileID: 5670974284820409533}
-  stringsBankWriteTime: 637551526778093718
+  stringsBankWriteTime: 637551610770496590
   cacheVersion: 6
 --- !u!114 &274869691507446027
 MonoBehaviour:
@@ -232,7 +232,7 @@ MonoBehaviour:
   Path: audio/blub_fmod/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637551526778073758
+  lastModified: 637551610770486621
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -385,7 +385,7 @@ MonoBehaviour:
   Path: audio/blub_fmod/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637551526778093718
+  lastModified: 637551610770496590
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -432,7 +432,7 @@ MonoBehaviour:
   - {fileID: 274869691507446027}
   IsStream: 0
   Is3D: 0
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 0
   MaxDistance: 0

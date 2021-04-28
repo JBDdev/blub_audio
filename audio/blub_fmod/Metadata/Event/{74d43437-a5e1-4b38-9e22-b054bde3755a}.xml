@@ -90,8 +90,11 @@
 	<object class="MixerBusPanner" id="{5a877ea5-554c-46e1-b8ad-b0fbae02b05b}" />
 	<object class="MultiSound" id="{9ceaccbd-39c2-45d5-8baf-fb909228e0b0}">
 		<property name="length">
-			<value>2</value>
+			<value>0.35999999999999999</value>
 		</property>
+		<relationship name="automators">
+			<destination>{0bb26324-fa0f-4075-8ec3-318d8d47de6f}</destination>
+		</relationship>
 		<relationship name="sounds">
 			<destination>{f0af99c4-1529-4059-a760-61c5162cf850}</destination>
 			<destination>{b69988a1-aa31-42b3-b115-adabcbd9ec6e}</destination>
@@ -124,6 +127,11 @@
 	</object>
 	<object class="MixerBusPanner" id="{51c6b3ac-95f6-4ff8-9f7d-37a0d3f3a3f4}" />
 	<object class="MixerBusFader" id="{86866a92-7589-45ec-a166-8c73eedb11f4}" />
+	<object class="Automator" id="{0bb26324-fa0f-4075-8ec3-318d8d47de6f}">
+		<property name="nameOfPropertyBeingAutomated">
+			<value>volume</value>
+		</property>
+	</object>
 	<object class="SingleSound" id="{f0af99c4-1529-4059-a760-61c5162cf850}">
 		<relationship name="audioFile">
 			<destination>{0daa47ab-c9eb-4f5d-b36d-9d412bbedfb1}</destination>
