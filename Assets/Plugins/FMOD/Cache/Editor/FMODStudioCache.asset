@@ -63,7 +63,8 @@ MonoBehaviour:
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
-  Parameters: []
+  Parameters:
+  - {fileID: 5284948013470250487}
   MinDistance: 0
   MaxDistance: 0
   Length: 370
@@ -113,6 +114,26 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 837
+--- !u!114 &-4758205670580784873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/player_hardfall/Falling Speed
+  m_EditorClassIdentifier: 
+  Name: Falling Speed
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
 --- !u!114 &-3976632860691176622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,6 +157,46 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1500
+--- !u!114 &-3570396636602085944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/player_hardfall/Falling Speed
+  m_EditorClassIdentifier: 
+  Name: Falling Speed
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
+--- !u!114 &-3085007455871349787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Speed
+  m_EditorClassIdentifier: 
+  Name: Speed
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 3898128759
+    data2: 1392483824
+  Exists: 1
 --- !u!114 &-2856635758574369387
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -210,12 +271,13 @@ MonoBehaviour:
   - {fileID: 743740246140607814}
   - {fileID: 1777196638805376351}
   - {fileID: -7831251943312314615}
-  EditorParameters: []
+  EditorParameters:
+  - {fileID: -3085007455871349787}
   MasterBanks:
   - {fileID: 274869691507446027}
   StringsBanks:
   - {fileID: 5670974284820409533}
-  stringsBankWriteTime: 637551610770496590
+  stringsBankWriteTime: 637551749929958478
   cacheVersion: 6
 --- !u!114 &274869691507446027
 MonoBehaviour:
@@ -232,7 +294,7 @@ MonoBehaviour:
   Path: audio/blub_fmod/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637551610770486621
+  lastModified: 637551749929948516
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -259,6 +321,26 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1000
+--- !u!114 &944962142298052892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/player_shrink/Player Size
+  m_EditorClassIdentifier: 
+  Name: Player Size
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &1511036200145393223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -281,7 +363,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
-  Length: 2525
+  Length: 2600
 --- !u!114 &1777196638805376351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -301,7 +383,8 @@ MonoBehaviour:
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
-  Parameters: []
+  Parameters:
+  - {fileID: 5238935581757899712}
   MinDistance: 0
   MaxDistance: 0
   Length: 2000
@@ -350,7 +433,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
-  Length: 2000
+  Length: 360
 --- !u!114 &4780973857189245777
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -370,6 +453,46 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
+--- !u!114 &5238935581757899712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/player_hardfall/Falling Speed
+  m_EditorClassIdentifier: 
+  Name: Falling Speed
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
+--- !u!114 &5284948013470250487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/player_stretch/Player Size
+  m_EditorClassIdentifier: 
+  Name: Player Size
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &5670974284820409533
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -385,11 +508,11 @@ MonoBehaviour:
   Path: audio/blub_fmod/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637551610770496590
+  lastModified: 637551749929958478
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1252
+    Value: 1396
   Exists: 1
 --- !u!114 &6763114661736282810
 MonoBehaviour:
@@ -433,7 +556,8 @@ MonoBehaviour:
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
-  Parameters: []
+  Parameters:
+  - {fileID: 944962142298052892}
   MinDistance: 0
   MaxDistance: 0
   Length: 370
