@@ -61,6 +61,10 @@ public class PlayerAudio : MonoBehaviour
             emitters[4].Stop();
         }
 
+        emitters[5].SetParameter("Player Speed", Mathf.Abs(player.transform.GetComponent<Rigidbody2D>().angularVelocity) / 750f);
+        emitters[6].SetParameter("Player Speed", Mathf.Abs(player.transform.GetComponent<Rigidbody2D>().angularVelocity) / 750f);
+        
+
         rotModulo = Mathf.Abs(player.transform.rotation.z) % 90;
         //Debug.Log(rotModulo);
         if (rotModulo <= 0.25f || rotModulo > 0.95f)

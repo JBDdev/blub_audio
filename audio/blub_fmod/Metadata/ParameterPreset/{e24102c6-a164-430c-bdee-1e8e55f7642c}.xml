@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="ParameterPreset" id="{e24102c6-a164-430c-bdee-1e8e55f7642c}">
 		<property name="name">
-			<value>Speed</value>
+			<value>Player Speed</value>
 		</property>
 		<relationship name="folder">
 			<destination>{72e86a6c-0268-426b-8d97-2d23d374e3a2}</destination>
@@ -12,9 +12,6 @@
 		</relationship>
 	</object>
 	<object class="GameParameter" id="{cf6f79b5-65d9-4ef5-8a3d-249e95c1d776}">
-		<property name="isGlobal">
-			<value>true</value>
-		</property>
 		<property name="initialValue">
 			<value>0</value>
 		</property>

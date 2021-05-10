@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Player Constraints")]
     public float maxStretch = 5f;
-    [SerializeField] float maxVelocity = 10f;
+    public float maxVelocity = 10f;
 
     [Space]
 
